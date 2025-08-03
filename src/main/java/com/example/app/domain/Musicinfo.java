@@ -1,5 +1,7 @@
 package com.example.app.domain;
 
+import jakarta.validation.constraints.NotBlank;
+
 import lombok.Data;
 
 @Data
