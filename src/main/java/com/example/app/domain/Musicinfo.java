@@ -8,6 +8,9 @@ import lombok.Data;
 public class Musicinfo {
 	private Integer id;
 	 @NotBlank
-	 private String loginId;
-	 private String loginPass; 
+	 private String title;
+	 private String artist; 
+	 private String song_key;
+	 private Integer bpm;
+	 private String  memo;
 }
