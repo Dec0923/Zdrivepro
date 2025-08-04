@@ -14,8 +14,11 @@
 </resultMap>
 
 <select id="selectMusic" resultMap="musicMap">
+<![CDATA[
 SELECT*FROM music;
-
+WHERE songkey LIKE CONCAT('%', #{songkey}, '%')
+ AND age >= #{from} AND age <= #{to}
+ ]]>
 </select>
 
 </mapper>

@@ -17,17 +17,23 @@ public class MusicServiceImpl implements MusicService {
 	
 	@Override
 	public List<Musicinfo> searchAll(){
-		return musicMapper.selectMusic();
+		String songkey="";
+		int from=0;
+		int to =999;
+		return musicMapper.selectMusic(songkey,from,to);
 	}
 	
 	@Override
 	public List<Musicinfo> searchBysongkey(String songkey){
-		return null;
+		int from =0;
+		int to=999;
+		return musicMapper.selectMusic(songkey,from,to);
 	}
 	
 	@Override
 	public List<Musicinfo> searchBybpm(int from, int to){
-		return null;
+		String songkey="";
+		return musicMapper.selectMusic(songkey,from,to);
 	}
 	
 	@Override
