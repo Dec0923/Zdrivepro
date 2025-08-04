@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.example.app.domain.Musicinfo;
 
 @Mapper
-public class MusicMapper {
+public interface MusicMapper {
 	List<Musicinfo> selectMusic();
 	void addMusicinfo(Musicinfo musicinfo);
 
