@@ -14,10 +14,8 @@
 </resultMap>
 
 <select id="selectMusic" resultMap="musicMap">
-SELECT
- music.id, music.title, music.artist,
- music.song_key, music.bpm,music.memo,
-FROM music
+SELECT*FROM music;
+
 </select>
 
 </mapper>

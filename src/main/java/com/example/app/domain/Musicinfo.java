@@ -10,7 +10,7 @@ public class Musicinfo {
 	 @NotBlank
 	 private String title;
 	 private String artist; 
-	 private String song_key;
+	 private String songkey;
 	 private Integer bpm;
 	 private String  memo;
 }
