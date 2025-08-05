@@ -60,7 +60,7 @@
       <!-- 右側：フォーム -->
       <div class="form-container">
         <h6 class="text-primary">楽曲キー検索システム</h6>
-        <form action="">
+        <form action="" method="post" th:object="{member}">
           <h1 class="text-primary">新規登録</h1>
           <p><span class="text-success">楽曲:</span> <input type="text" name="music" class="form-control"></p>
           <button type="submit" class="btn btn-primary">決定</button>
