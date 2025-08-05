@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>曲の追加</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .form-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+        }
+
+        .form-table td:first-child {
+            background-color: #f2f2f2;
+            width: 150px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .form-table input[type="text"],
+        .form-table select {
+            width: calc(100% - 20px); /* 100%からpadding分を引く */
+            padding: 8px;
+            box-sizing: border-box; /* paddingとborderを幅に含める */
+            border: 1px solid #ccc;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>曲の追加</h1>
+
+    <div class="form-section">
+        <form action="#" method="post">
+            <table class="form-table">
+                <tbody>
+                    <tr>
+                        <td>氏名</td>
+                        <td>
+                            <input type="text" id="name" name="name" placeholder="氏名を入力">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>年齢</td>
+                        <td>
+                            <input type="text" id="age" name="age" placeholder="年齢を入力">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>住所</td>
+                        <td>
+                            <input type="text" id="address" name="address" placeholder="住所を入力">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>会員種別</td>
+                        <td>
+                            <select id="member-type" name="member-type">
+                                <option value="normal" selected>通常会員</option>
+                                <option value="premium">プレミアム会員</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" class="save-button">保存</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

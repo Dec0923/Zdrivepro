@@ -27,15 +27,15 @@ public class MusicController {
 	 @RequestParam String songkey,
 	 @RequestParam int from,
 	 @RequestParam int to,
-	 @RequestParam(required = false) String addressButton,
+	 @RequestParam(required = false) String songkeyButton,
 	 Model model) {
-	 if(addressButton != null) {
-	 if(address.isBlank()) {
+	 if(songkeyButton != null) {
+	 if(songkey.isBlank()) {
 	 return "redirect:/members";
 	 }
-	 model.addAttribute("searchedBy", address);
+	 model.addAttribute("searchedBy", songkey);
 	 model.addAttribute("members",
-	service.searchBysongkey(address));
+	service.searchBysongkey(songkey));
 	 } else {
 	 model.addAttribute("searchedBy", from + "才～" + to + "才");
 	 model.addAttribute("members", service.searchBybpm(from, to));

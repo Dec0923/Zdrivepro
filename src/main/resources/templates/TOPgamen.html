@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #212529; /* Bootstrapの bg-dark */
+    }
+
+    .container-wrapper {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .left-image-area {
+      flex: 1;
+      background: url('11947660-537c-4583-b1e5-acfcb4c67316.png') no-repeat center center;
+      background-size: contain; /* 画像の比率を維持して全体を収める */
+      background-color: white;
+      border: 2px solid green; /* 赤枠の代わりに緑枠を再現 */
+    }
+
+    .form-container {
+      width: 320px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      overflow-y: auto;
+      border-left: 2px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .form-container h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-container .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container-wrapper">
+      <!-- 左側：画像エリア -->
+      <div class="left-image-area"></div>
+
+      <!-- 右側：フォーム -->
+      <div class="form-container">
+        <h6 class="text-primary">楽曲キー検索システム</h6>
+        <form action="">
+          <h1 class="text-primary">新規登録</h1>
+          <p><span class="text-success">楽曲:</span> <input type="text" name="music" class="form-control"></p>
+          <button type="submit" class="btn btn-primary">決定</button>
+        </form>
+        <a href="music_list.html" class="btn btn-info">楽曲一覧へ</a>
+        <a href="music_register.html" class="btn btn-info">楽曲登録</a>
+      </div>
+    </div>
+  </main>
+</body>

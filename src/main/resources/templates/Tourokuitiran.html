@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楽曲一覧</title>
+    <style>
+        /* ここにCSSを記述します */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .pagination {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pagination a, .pagination span {
+            text-decoration: none;
+            color: #007bff;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .pagination .current-page {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .list-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .list-table th, .list-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            white-space: nowrap; /* セル内のテキストが改行されないように */
+        }
+
+        .list-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .list-table td a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .list-table td a:hover {
+            text-decoration: underline;
+        }
+
+        .add-button {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .add-button a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .add-button a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>楽曲一覧</h1>
+
+    <div class="pagination">
+        <a href="#">前のページ</a>
+        <a href="#">1</a>
+        <span class="current-page">2</span>
+        <a href="#">3</a>
+        <a href="#">次のページ</a>
+    </div>
+
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>曲名</th>
+                <th>アーティスト</th>
+                <th>BPM</th>
+                <th>キー</th>
+                <th>登録日</th>
+                <th>編集</th>
+                <th>削除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>ライラック</td>
+                <td>150</td>
+                <td>東京都</td>
+                <td>通常会員</td>
+                <td>2010-01-01</td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>鈴木一郎</td>
+                <td>30</td>
+                <td>東京都</td>
+                <td>プレミアム会員</td>
+                <td>2010-01-01</td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>田中三郎</td>
+                <td>18</td>
+                <td>神奈川県</td>
+                <td>プレミアム会員</td>
+                <td>2010-01-01</td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>佐藤四朗</td>
+                <td>42</td>
+                <td>神奈川県</td>
+                <td>通常会員</td>
+                <td>2010-01-01</td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>加藤五郎</td>
+                <td>25</td>
+                <td>埼玉県</td>
+                <td>プレミアム会員</td>
+                <td>2010-01-01</td>
+                <td><a href="#">編集</a></td>
+                <td><a href="#">削除</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="add-button">
+        <a href="#">会員の追加</a>
+    </div>
+</div>
+
+</body>
+</html
