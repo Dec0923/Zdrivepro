@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.app.domain.Musicinfo;
+import com.example.app.domain.MusicInfo;
 import com.example.app.mapper.MusicMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ public class MusicServiceImpl implements MusicService {
 	private final MusicMapper musicMapper;
 	
 	@Override
-	public List<Musicinfo> searchAll(){
+	public List<MusicInfo> searchAll(){
 		String songkey="";
 		int from=0;
 		int to =999;
@@ -24,20 +24,20 @@ public class MusicServiceImpl implements MusicService {
 	}
 	
 	@Override
-	public List<Musicinfo> searchBysongkey(String songkey){
+	public List<MusicInfo> searchBysongkey(String songkey){
 		int from =0;
 		int to=999;
 		return musicMapper.selectMusic(songkey,from,to);
 	}
 	
 	@Override
-	public List<Musicinfo> searchBybpm(int from, int to){
+	public List<MusicInfo> searchBybpm(int from, int to){
 		String songkey="";
 		return musicMapper.selectMusic(songkey,from,to);
 	}
 	
 	@Override
-	public void save(Musicinfo musicinfo) {
+	public void save(MusicInfo musicinfo) {
 		
 	}
 

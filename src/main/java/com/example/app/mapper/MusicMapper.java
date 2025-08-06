@@ -5,14 +5,14 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.example.app.domain.Musicinfo;
+import com.example.app.domain.MusicInfo;
 
 @Mapper
 public interface MusicMapper {
-	List<Musicinfo> selectMusic(
+	List<MusicInfo> selectMusic(
 			@Param("songkey") String songkey,
 			@Param("from") int from,
 			@Param("to") int to);
-	void addMusicinfo(Musicinfo musicinfo);
+	void addMusicInfo(MusicInfo musicinfo);
 
 }

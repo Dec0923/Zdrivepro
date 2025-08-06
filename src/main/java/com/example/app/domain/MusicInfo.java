@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class Musicinfo {
+public class MusicInfo {
 	private Integer id;
 	 @NotBlank
 	 private String title;

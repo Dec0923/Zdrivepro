@@ -18,8 +18,7 @@ public class MusicController {
 
 	 @GetMapping
 	 public String all(Model model) {
-	 model.addAttribute("members", service.searchAll());
-	 return "members";
+	 return "TOPgamen";
 	 }
 
 	 @GetMapping("/search")
@@ -31,7 +30,7 @@ public class MusicController {
 	 Model model) {
 	 if(songkeyButton != null) {
 	 if(songkey.isBlank()) {
-	 return "redirect:/members";
+	 return "Tourokuitiran";
 	 }
 	 model.addAttribute("searchedBy", songkey);
 	 model.addAttribute("members",
@@ -43,4 +42,5 @@ public class MusicController {
 	 return "members";
 	 }
 
+	 
 }
