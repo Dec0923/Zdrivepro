@@ -8,21 +8,21 @@
  <result column="id" property="id" />
  <result column="title" property="title" />
  <result column="artist" property="artist" />
- <result column="song_key" property="songkey" />
+ <result column="songkey" property="songkey" />
  <result column="bpm" property="bpm" />
  <result column="memo" property="memo" />
 </resultMap>
 
 <select id="selectMusic" resultMap="musicMap">
 <![CDATA[
-SELECT*FROM music;
+SELECT*FROM songs
 WHERE songkey LIKE CONCAT('%', #{songkey}, '%')
- AND age >= #{from} AND age <= #{to}
+ AND bpm>= #{from} AND bpm <= #{to}
  ]]>
 </select>
  <insert id="addMusicInfo" parameterType="com.example.app.domain.MusicInfo">
- INSERT INTO music;
- (title,artist,songkey,bpm,memo)
+ INSERT INTO songs
+ (title,artist,song_key,bpm,memo)
  VALUES
  (#{title},#{artist},#{songkey},#{bpm},#{memo})
  </insert>

@@ -17,9 +17,16 @@ public class MusicController {
 	private final MusicService service;
 
 	 @GetMapping
-	 public String all(Model model) {
+	 public String Top() {
 	 return "TOPgamen";
 	 }
+	 
+	 @GetMapping("/list")
+	 public String all(Model model) {
+	 model.addAttribute("songs", service.searchAll());
+	 return "Tourokuitiran";
+	 }
+
 
 	 @GetMapping("/search")
 	 public String search(
@@ -30,14 +37,13 @@ public class MusicController {
 	 Model model) {
 	 if(songkeyButton != null) {
 	 if(songkey.isBlank()) {
-	 return "Tourokuitiran";
+	 return "redirect:/Tourokuitiran";
 	 }
 	 model.addAttribute("searchedBy", songkey);
-	 model.addAttribute("members",
-	service.searchBysongkey(songkey));
+	 model.addAttribute("songs", service.searchBysongkey(songkey));
 	 } else {
-	 model.addAttribute("searchedBy", from + "才～" + to + "才");
-	 model.addAttribute("members", service.searchBybpm(from, to));
+	 model.addAttribute("searchedBy", from +  + to );
+	 model.addAttribute("songs", service.searchBybpm(from, to));
 	 }
 	 return "members";
 	 }

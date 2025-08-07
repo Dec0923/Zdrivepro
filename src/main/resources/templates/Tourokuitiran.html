@@ -119,63 +119,35 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>ライラック</td>
-                <td>150</td>
-                <td>東京都</td>
-                <td>通常会員</td>
-                <td>2010-01-01</td>
-                <td><a href="#">編集</a></td>
-                <td><a href="#">削除</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>鈴木一郎</td>
-                <td>30</td>
-                <td>東京都</td>
-                <td>プレミアム会員</td>
-                <td>2010-01-01</td>
-                <td><a href="#">編集</a></td>
-                <td><a href="#">削除</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>田中三郎</td>
-                <td>18</td>
-                <td>神奈川県</td>
-                <td>プレミアム会員</td>
-                <td>2010-01-01</td>
-                <td><a href="#">編集</a></td>
-                <td><a href="#">削除</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>佐藤四朗</td>
-                <td>42</td>
-                <td>神奈川県</td>
-                <td>通常会員</td>
-                <td>2010-01-01</td>
-                <td><a href="#">編集</a></td>
-                <td><a href="#">削除</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>加藤五郎</td>
-                <td>25</td>
-                <td>埼玉県</td>
-                <td>プレミアム会員</td>
-                <td>2010-01-01</td>
+            <tr th:each="MusicInfo : ${songs}">
+                <td>[[${MusicInfo.id}]]</td>
+                <td>[[${MusicInfo.title}]]</td>
+                <td>[[${MusicInfo.artist}]]</td>
+                <td>[[${MusicInfo.songkey}]]</td>
+                <td>[[${MusicInfo.bpm}]]</td>
+                <td>[[${MusicInfo.memo}]]</td>
                 <td><a href="#">編集</a></td>
                 <td><a href="#">削除</a></td>
             </tr>
         </tbody>
     </table>
+	<form th:action="@{/search}">
+	<p>
+	 <input type="text" name="songkey" placeholder="キー">
+	 <input type="submit" name="songkeyButton" value="キーで絞り込み">
+	</p>
+	<p>
+	 <input type="number" name="from"
+	 value="0" min="0" step="1">
+	 <input type="number" name="to"
+	 value="60" min="0" step="1">
+	 <input type="submit" name="ageButton" value="BPMで絞り込み">
+	</p>
 
     <div class="add-button">
-        <a href="#">会員の追加</a>
+        <a href="#">追加</a>
     </div>
 </div>
 
 </body>
-</html
+</html>
