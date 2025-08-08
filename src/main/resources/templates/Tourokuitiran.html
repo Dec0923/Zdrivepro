@@ -93,61 +93,45 @@
     </style>
 </head>
 <body>
+	<h1>楽曲一覧</h1>
 
-<div class="container">
-    <h1>楽曲一覧</h1>
+	<form th:action="@{/music/search}" method="get">
+	    <input type="text" name="songkey" placeholder="キー" />
+	    <input type="number" name="from" min="0" value="0" />
+	    <input type="number" name="to" min="0" value="999" />
+	    <button type="submit">絞り込み</button>
+	</form>
 
-    <div class="pagination">
-        <a href="#">前のページ</a>
-        <a href="#">1</a>
-        <span class="current-page">2</span>
-        <a href="#">3</a>
-        <a href="#">次のページ</a>
-    </div>
+	<table border="1">
+	    <thead>
+	        <tr>
+	            <th>ID</th>
+	            <th>曲名</th>
+	            <th>アーティスト</th>
+	            <th>BPM</th>
+	            <th>キー</th>
+	            <th>メモ</th>
+	            <th>削除</th> <!-- 削除ボタン追加 -->
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr th:each="music : ${songs}">
+	            <td th:text="${music.id}"></td>
+	            <td th:text="${music.title}"></td>
+	            <td th:text="${music.artist}"></td>
+	            <td th:text="${music.bpm}"></td>
+	            <td th:text="${music.songkey}"></td>
+	            <td th:text="${music.memo}"></td>
+	            <td>
+	                <form th:action="@{/music/delete}" method="post" th:object="${music}">
+	                    <input type="hidden" th:name="id" th:value="${music.id}" />
+	                    <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+	                </form>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
 
-    <table class="list-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>曲名</th>
-                <th>アーティスト</th>
-                <th>BPM</th>
-                <th>キー</th>
-                <th>登録日</th>
-                <th>編集</th>
-                <th>削除</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="MusicInfo : ${songs}">
-                <td>[[${MusicInfo.id}]]</td>
-                <td>[[${MusicInfo.title}]]</td>
-                <td>[[${MusicInfo.artist}]]</td>
-                <td>[[${MusicInfo.songkey}]]</td>
-                <td>[[${MusicInfo.bpm}]]</td>
-                <td>[[${MusicInfo.memo}]]</td>
-                <td><a href="#">編集</a></td>
-                <td><a href="#">削除</a></td>
-            </tr>
-        </tbody>
-    </table>
-	<form th:action="@{/search}">
-	<p>
-	 <input type="text" name="songkey" placeholder="キー">
-	 <input type="submit" name="songkeyButton" value="キーで絞り込み">
-	</p>
-	<p>
-	 <input type="number" name="from"
-	 value="0" min="0" step="1">
-	 <input type="number" name="to"
-	 value="60" min="0" step="1">
-	 <input type="submit" name="ageButton" value="BPMで絞り込み">
-	</p>
-
-    <div class="add-button">
-        <a href="#">追加</a>
-    </div>
-</div>
-
+	<a th:href="@{/music/register}">楽曲登録</a>
 </body>
 </html>

@@ -1,5 +1,4 @@
 package com.example.app.service;
-
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -12,33 +11,26 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class MusicServiceImpl implements MusicService {
-	
-	private final MusicMapper musicMapper;
-	
-	@Override
-	public List<MusicInfo> searchAll(){
-		String songkey="";
-		int from=0;
-		int to =999;
-		return musicMapper.selectMusic(songkey,from,to);
-	}
-	
-	@Override
-	public List<MusicInfo> searchBysongkey(String songkey){
-		int from =0;
-		int to=999;
-		return musicMapper.selectMusic(songkey,from,to);
-	}
-	
-	@Override
-	public List<MusicInfo> searchBybpm(int from, int to){
-		String songkey="";
-		return musicMapper.selectMusic(songkey,from,to);
-	}
-	
-	@Override
-	public void save(MusicInfo musicinfo) {
-		
-	}
+    private final MusicMapper musicMapper;
 
+    @Override
+    public List<MusicInfo> searchAll() {
+        // 空＋全範囲で全曲取得
+        return musicMapper.selectMusic("", 0, 999);
+    }
+
+    @Override
+    public List<MusicInfo> searchMusic(String songkey, int from, int to) {
+        return musicMapper.selectMusic(songkey, from, to);
+    }
+
+    @Override
+    public void save(MusicInfo musicinfo) {
+        musicMapper.addMusicInfo(musicinfo);
+    }
+    
+    @Override
+    public void deleteById(Integer id) {
+        musicMapper.deleteMusicById(id);
+    }
 }

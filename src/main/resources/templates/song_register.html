@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+	    <h1>曲の追加</h1>
+	    <form th:action="@{/music/register}" th:object="${musicInfo}" method="post">
+	        <div>
+	            <label>曲名</label>
+	            <input type="text" th:field="*{title}" required>
+	        </div>
+	        <div>
+	            <label>アーティスト</label>
+	            <input type="text" th:field="*{artist}">
+	        </div>
+	        <div>
+	            <label>キー</label>
+	            <input type="text" th:field="*{songkey}">
+	        </div>
+	        <div>
+	            <label>BPM</label>
+	            <input type="number" th:field="*{bpm}">
+	        </div>
+	        <div>
+	            <label>メモ</label>
+	            <input type="text" th:field="*{memo}">
+	        </div>
+	        <button type="submit" class="btn btn-primary">保存</button>
+	    </form>
+	    <a th:href="@{/music/list}">一覧に戻る</a>
+	</div>
+</body>
+</html>

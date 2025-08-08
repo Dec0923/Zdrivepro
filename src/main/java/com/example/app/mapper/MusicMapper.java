@@ -9,10 +9,12 @@ import com.example.app.domain.MusicInfo;
 
 @Mapper
 public interface MusicMapper {
-	List<MusicInfo> selectMusic(
-			@Param("songkey") String songkey,
-			@Param("from") int from,
-			@Param("to") int to);
-	void addMusicInfo(MusicInfo musicinfo);
 
+    // キーとBPMで絞り込み
+    List<MusicInfo> selectMusic(@Param("songkey") String songkey, @Param("from") int from, @Param("to") int to);
+
+    // 1件追加
+    void addMusicInfo(MusicInfo musicinfo);
+    
+    void deleteMusicById(@Param("id") Integer id);
 }

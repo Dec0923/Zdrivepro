@@ -70,48 +70,32 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>曲の追加</h1>
-
-    <div class="form-section">
-        <form action="#" method="post">
-            <table class="form-table">
-                <tbody>
-                    <tr>
-                        <td>氏名</td>
-                        <td>
-                            <input type="text" id="name" name="name" placeholder="氏名を入力">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>年齢</td>
-                        <td>
-                            <input type="text" id="age" name="age" placeholder="年齢を入力">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>住所</td>
-                        <td>
-                            <input type="text" id="address" name="address" placeholder="住所を入力">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>会員種別</td>
-                        <td>
-                            <select id="member-type" name="member-type">
-                                <option value="normal" selected></option>
-                                <option value="premium"></option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <button type="submit" class="save-button">保存</button>
-        </form>
-    </div>
-</div>
-
+	<div class="container">
+	    <h1>曲の追加</h1>
+	    <form th:action="@{/music/register}" th:object="${musicInfo}" method="post">
+	        <div>
+	            <label>曲名</label>
+	            <input type="text" th:field="*{title}" required>
+	        </div>
+	        <div>
+	            <label>アーティスト</label>
+	            <input type="text" th:field="*{artist}">
+	        </div>
+	        <div>
+	            <label>キー</label>
+	            <input type="text" th:field="*{songkey}">
+	        </div>
+	        <div>
+	            <label>BPM</label>
+	            <input type="number" th:field="*{bpm}">
+	        </div>
+	        <div>
+	            <label>メモ</label>
+	            <input type="text" th:field="*{memo}">
+	        </div>
+	        <button type="submit" class="btn btn-primary">保存</button>
+	    </form>
+	    <a th:href="@{/music/list}">一覧に戻る</a>
+	</div>
 </body>
 </html>
