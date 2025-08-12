@@ -10,4 +10,5 @@ public interface MusicService {
     void save(MusicInfo musicinfo);
     
     void deleteById(Integer id);
+    List<MusicInfo> searchByTitle(String title);
 }

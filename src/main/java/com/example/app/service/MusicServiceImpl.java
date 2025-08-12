@@ -33,4 +33,9 @@ public class MusicServiceImpl implements MusicService {
     public void deleteById(Integer id) {
         musicMapper.deleteMusicById(id);
     }
+    
+    @Override
+    public List<MusicInfo> searchByTitle(String title) {
+        return musicMapper.selectByTitle(title);
+    }
 }

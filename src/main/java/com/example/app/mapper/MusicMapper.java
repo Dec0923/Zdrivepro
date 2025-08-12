@@ -17,4 +17,6 @@ public interface MusicMapper {
     void addMusicInfo(MusicInfo musicinfo);
     
     void deleteMusicById(@Param("id") Integer id);
+    
+    List<MusicInfo> selectByTitle(@Param("title") String title);
 }

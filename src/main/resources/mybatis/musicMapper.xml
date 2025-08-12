@@ -25,6 +25,13 @@
     VALUES (#{title}, #{artist}, #{songkey}, #{bpm}, #{memo})
   </insert>
   
+  <select id="selectByTitle" resultMap="musicMap" parameterType="string">
+    <![CDATA[
+    SELECT * FROM songs
+    WHERE title LIKE CONCAT('%', #{title}, '%')
+    ]]>
+</select>
+
   <delete id="deleteMusicById" parameterType="int">
   DELETE FROM songs WHERE id=#{id}
   </delete>
