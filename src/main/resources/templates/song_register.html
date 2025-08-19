@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
+
 <body>
 	<div class="container">
-	    <h1>曲の追加</h1>
-	    <form th:action="@{/music/register}" th:object="${musicInfo}" method="post">
-	        <div>
-	            <label>曲名</label>
-	            <input type="text" th:field="*{title}" required>
-	        </div>
-	        <div>
-	            <label>アーティスト</label>
-	            <input type="text" th:field="*{artist}">
-	        </div>
-	        <div>
-	            <label>キー</label>
-	            <input type="text" th:field="*{songkey}">
-	        </div>
-	        <div>
-	            <label>BPM</label>
-	            <input type="number" th:field="*{bpm}">
-	        </div>
-	        <div>
-	            <label>メモ</label>
-	            <input type="text" th:field="*{memo}">
-	        </div>
-	        <button type="submit" class="btn btn-primary">保存</button>
-	    </form>
-	    <a th:href="@{/music/list}">一覧に戻る</a>
+		<h1>曲の追加</h1>
+		<form th:action="@{/music/register}" th:object="${musicInfo}" method="post">
+			<div>
+				<label>曲名</label>
+				<input type="text" th:field="*{title}" required>
+			</div>
+			<div>
+				<label>アーティスト</label>
+				<input type="text" th:field="*{artist}">
+			</div>
+			<div>
+				<label>キー</label>
+				<select th:field="*{songkey}">
+					<option value="Cメジャー">Cメジャー</option>
+					<option value="C♯メジャー">C♯メジャー</option>
+					<option value="Dメジャー">Dメジャー</option>
+					<option value="D♯メジャー">D♯メジャー</option>
+					<option value="Eメジャー">Eメジャー</option>
+					<option value="Fメジャー">Fメジャー</option>
+					<option value="F♯メジャー">F♯メジャー</option>
+					<option value="Gメジャー">Gメジャー</option>
+					<option value="G♯メジャー">G♯メジャー</option>
+					<option value="Aメジャー">Aメジャー</option>
+					<option value="A♯メジャー">A♯メジャー</option>
+					<option value="Bメジャー">Bメジャー</option>
+					<option value="Cマイナー">Cマイナー</option>
+					<option value="C♯マイナー">C♯マイナー</option>
+					<option value="Dマイナー">Dマイナー</option>
+					<option value="D♯マイナー">D♯マイナー</option>
+					<option value="Eマイナー">Eマイナー</option>
+					<option value="Fマイナー">Fマイナー</option>
+					<option value="F♯マイナー">F♯マイナー</option>
+					<option value="Gマイナー">Gマイナー</option>
+					<option value="G♯マイナー">G♯マイナー</option>
+					<option value="Aマイナー">Aマイナー</option>
+					<option value="A♯マイナー">A♯マイナー</option>
+					<option value="Bマイナー">Bマイナー</option>
+				</select>
+			</div>
+			<div>
+				<label>BPM</label>
+				<input type="number" th:field="*{bpm}">
+			</div>
+			<div>
+				<label>メモ</label>
+				<input type="text" th:field="*{memo}">
+			</div>
+			<button type="submit" class="btn btn-primary">保存</button>
+		</form>
+		<a th:href="@{/music/list}">一覧に戻る</a>
 		<a th:href="@{/music}" style="margin-left:10px;">TOPページへ</a>
 	</div>
 </body>
+
 </html>
