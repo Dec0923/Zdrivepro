@@ -3,7 +3,99 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>楽曲登録</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	  <style>
+	body {
+	    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+	    background-color: #f4f7f6;
+	    color: #333;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    min-height: 100vh;
+	    margin: 0;
+	}
+
+	.container {
+	    background-color: #fff;
+	    padding: 40px;
+	    border-radius: 12px;
+	    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	    width: 100%;
+	    max-width: 500px;
+	    box-sizing: border-box;
+	}
+
+	h1 {
+	    text-align: center;
+	    color: #2c3e50;
+	    margin-bottom: 30px;
+	    font-size: 2em;
+	    font-weight: 600;
+	}
+
+	form > div {
+	    margin-bottom: 20px;
+	}
+
+	label {
+	    display: block;
+	    margin-bottom: 8px;
+	    font-weight: 500;
+	    color: #555;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	select {
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ddd;
+	    border-radius: 8px;
+	    box-sizing: border-box;
+	    font-size: 1em;
+	    transition: border-color 0.3s;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	select:focus {
+	    border-color: #3498db;
+	    outline: none;
+	}
+
+	.btn {
+	    width: 100%;
+	    padding: 12px;
+	    background-color: #3498db;
+	    color: #fff;
+	    border: none;
+	    border-radius: 8px;
+	    font-size: 1.1em;
+	    cursor: pointer;
+	    transition: background-color 0.3s, transform 0.2s;
+	    font-weight: 600;
+	}
+
+	.btn:hover {
+	    background-color: #2980b9;
+	    transform: translateY(-2px);
+	}
+
+	a {
+	    display: inline-block;
+	    color: #3498db;
+	    text-decoration: none;
+	    margin-top: 20px;
+	    transition: color 0.3s;
+	}
+
+	a:hover {
+	    color: #2980b9;
+	    text-decoration: underline;
+	}
+	</style>
 </head>
 
 <body>
@@ -19,7 +111,7 @@
 				<input type="text" th:field="*{artist}">
 			</div>
 			<div>
-				<label>キー</label>
+				<label>スケール</label>
 				<select th:field="*{songkey}">
 					<option value="Cメジャー">Cメジャー</option>
 					<option value="C♯メジャー">C♯メジャー</option>
